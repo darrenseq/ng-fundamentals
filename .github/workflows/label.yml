@@ -1,19 +1,5 @@
-# This workflow will triage pull requests and apply a label based on the
-# paths that are modified in the pull request.
-#
-# To use this workflow, you will need to set up a .github/labeler.yml
-# file with configuration.  For more information, see:
-# https://github.com/actions/labeler/blob/master/README.md
-
-name: Labeler
-on: [pull_request]
-
-jobs:
-  label:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/labeler@v2
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+name: Send message to ms teams
+  uses: dhollerbach/github-action-send-message-to-ms-teams@1.0.10
+  with:
+    webhook: 'https://outlook.office.com/webhook/c96b43ef-b66e-45df-8391-3caaaebfa6ac@e3a291d3-8a20-4c35-8d08-38ffcafa479d/IncomingWebhook/c9ea85070357436ba500dcd2a46e0a35/3e97e3e6-9b89-4859-9a4c-18c0f4a0cc91'
+    message: 'W00t it werked!'
